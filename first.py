@@ -41,7 +41,7 @@ def task2():
     new_sample = np.array([v12_task2_data['Investment'][0], v12_task2_data['Population'][0], v12_task2_data['Employees'][0]]).reshape(1, -1)
     v12_profit_predict = model.predict(new_sample)
 
-    print(f"Передбачений прибуток для міста варіанту 12: {v12_profit_predict}")
+    print(f"Передбачений прибуток для міста варіанту 12: {v12_profit_predict}","\n")
 
 def task3():
     model, full_profit_predict = task1()
@@ -57,7 +57,7 @@ def task3():
     new_profit_predict = model.predict(df[["Investment", "Population", "Employees"]])
     df["Predicted profit"] = new_profit_predict
     sorted_df = df.sort_values(by="Predicted profit", ascending=False)
-    print(sorted_df.head(3))
+    print(sorted_df.head(3), "\n")
     return new_profit_predict
 
 def task4():
@@ -73,7 +73,7 @@ def task4():
 
     df["ROI"] = df["Investment"] / new_profit_predict
     df_sorted = df.sort_values(by="ROI", ascending=True)
-    print(df_sorted.head(3))
+    print(df_sorted.head(3),"\n")
 
 # Викликаємо функції
 task1()
